@@ -5,7 +5,11 @@
     <title>matin blog</title>
 </head>
 <body>
-    <h1>hi, welcome to my website!!</h1>
-    <h3>how can i help you?</h3>
+    <h1>hi welcome to my website!!</h1>
+    {% for todo in all %}
+        <h2>{{ todo.titel }}</h2>
+        <p>{{ todo.body }}</p>
+        <hr>
+    {% endfor %}
 </body>
 </html>
