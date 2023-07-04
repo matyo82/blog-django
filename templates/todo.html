@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block todo %}
+    <h1>hi welcome to my website!!</h1>
+    {% for todo in all %}
+        <h2>{{ todo.titel }}</h2>
+        <p>{{ todo.body }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}

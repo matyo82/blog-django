@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>matin blog</title>
-</head>
-<body>
-    <h1>hi welcome to my website!!</h1>
-    {% for todo in all %}
-        <h2>{{ todo.titel }}</h2>
-        <p>{{ todo.body }}</p>
-        <hr>
-    {% endfor %}
-</body>
-</html>
+{% include 'header.html' %}
+        <!-- Responsive navbar-->
+        {% include 'navbar.html' %}
+        <!-- Page header with logo and tagline-->
+        {% include 'welcome.html' %}
+        <!-- Page content-->
+        <div class="container">
+            <div class="row">
+                <!-- Blog entries-->
+                <div class="col-lg-8">
+                    <!-- Nested row for non-featured blog posts-->
+                    <div class="row">
+                        {% for post in all %}
+                            <!-- Blog post-->
+                            <div class="card mb-4">
+                                <a href="#"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+                                <div class="card-body">
+                                    <div class="small text-muted">{{ post.created }}</div>
+                                    <h2 class="card-title h4">{{ post.titel }}</h2>
+                                    <p class="card-text">{{ post.body }}</p>
+                                    <a class="btn btn-primary" href="{% url 'post' post.id %}">Read more → </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Side widgets-->
+                {% include 'sidebar.html' %}
+            </div>
+        </div>
+{% include 'foother.html' %}
