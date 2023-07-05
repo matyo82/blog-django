@@ -9,6 +9,12 @@
                     <article>
                         <!-- Post header-->
                         <header class="mb-4">
+                            <div class="row">
+                                <div class="col-12">
+                                    <a href="{% url 'delete' post.id %}" class="btn btn-danger">deleted</a>
+                                    <a href="" class="btn btn-info">update</a>
+                                </div>
+                            </div>
                             <!-- Post title-->
                             <h1 class="fw-bolder mb-1">{{ post.titel }}</h1>
                             <!-- Post meta content-->
