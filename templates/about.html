@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block title %}About Us{% endblock %}
+{% block banner %}
+    <!-- SUB HERO BANNER START -->
+    <section class="sub-hero-banner" style="background-image: url('../static/art/hero1.webp');">
+        <div class="hero-contained">
+            <div class="hero-title fc-white">
+                <h1 class="ff-damion">Matin | About Us</h1>
+                <a href="index.html" class="fc-white">
+                    Home
+                </a>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#" class="fc-white">
+                    About Us
+                </a>
+            </div>
+        </div>
+        <div class="hero-socials">
+            <a href="#" class="mt-a icon-link" aria-label="Follow us on facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on twitter">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on youtube">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+    </section>
+    <!-- SUB HERO BANNER END -->
+{% endblock %}
+
+{% block content %}
+    <section class="contained row">
+        <div class="col-balance">
+            <h2 class="section-title ff-damion">About us</h2>
+            <span class="fc-primary fs-h2">
+                    We are a top notch placholder text dedicated to make your vision comes to life! Ofcourse this
+                    comes with limitations.
+                </span>
+            <p>
+                Here at Roundazzle, our mission is crystal clear: to transform your dreams into reality.
+                We're not just good; we're extremely good, and we're dedicated to making your vision come to life.
+                Did we mention that we're in the business of turning your vision into reality?
+            </p>
+            <p>
+                Our vision is your vision and we are good at envisioning vision that you are envisioning and we'll make
+                that vision you are envisioning comes true and we are really good at it yeah believe this placeholder
+                text.
+            </p>
+            <p>
+                As a placeholder text in the 'About' section, my mission is to captivate your interest.
+                And what better way to captivate your interest than by entertaining you with visions, missions,
+                and a dash of whimsy? Or was it mission-vision, vision-mission, a vision that turned into a mission,
+                itching to become real?
+            </p>
+            <p>
+                Yes we are a top notch high quality, another top notch and high I wonder where we are
+                now, in space probably.
+            </p>
+        </div>
+        <div class="col-balance">
+            <div class="sticky-img-dual">
+                <img src="../static/art/hero1.webp" alt="">
+                <img src="../static/svg/blob.svg" alt="" class="blob">
+                <img src="../static/art/hero2.webp" alt="">
+            </div>
+        </div>
+        <div class="sticky-img-dual-spacer"></div>
+
+
+        <div class="col-balance">
+            <div class="sticky-img-dual">
+                <img src="../static/art/hero1.webp" alt="">
+                <img src="../static/svg/blob.svg" alt="" class="blob">
+                <img src="../static/art/hero2.webp" alt="">
+            </div>
+        </div>
+        <div class="col-balance">
+            <h2 class="section-title ff-damion">About us</h2>
+            <span class="fc-primary fs-h2">
+                    We are a top notch placholder text dedicated to make your vision comes to life! Ofcourse this
+                    comes with limitations.
+                </span>
+            <p>
+                Here at Roundazzle, our mission is crystal clear: to transform your dreams into reality.
+                We're not just good; we're extremely good, and we're dedicated to making your vision come to life.
+                Did we mention that we're in the business of turning your vision into reality?
+            </p>
+            <p>
+                Our vision is your vision and we are good at envisioning vision that you are envisioning and we'll make
+                that vision you are envisioning comes true and we are really good at it yeah believe this placeholder
+                text.
+            </p>
+            <p>
+                As a placeholder text in the 'About' section, my mission is to captivate your interest.
+                And what better way to captivate your interest than by entertaining you with visions, missions,
+                and a dash of whimsy? Or was it mission-vision, vision-mission, a vision that turned into a mission,
+                itching to become real?
+            </p>
+            <p>
+                Yes we are a top notch high quality, another top notch and high I wonder where we are
+                now, in space probably.
+            </p>
+        </div>
+        <div class="sticky-img-dual-spacer"></div>
+    </section>
+
+    <section class="contained">
+        <h2 class="section-title ff-damion">Our team</h2>
+        <p class="col-wide mlmr-a ta-center">
+            Our team composes of highly competitive cloned
+            individual with the same name too, they are top notch motivaded individual
+            dedicated to give hundred and ten percent effort to make your vision comes to life.
+        </p>
+        <div class="row flex-just-center">
+            {% for team in team_list %}
+                <div class="col-tri">
+                    <article class="card-team">
+                        <img src="/media/{{ team.image }}" alt="">
+                        <h3 class="title ff-damion">{{ team.full_name }}</h3>
+                        <div class="info">
+                            <h3 class="ff-damion">{{ team.job }}</h3>
+                            <p>{{ team.description }}</p>
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+    </section>
+{% endblock %}

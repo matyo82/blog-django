@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block banner %}
+    <!-- MAIN HERO BANNER START -->
+    <section class="hero-banner">
+        <div class="hero-contained">
+            <div class="hero-title fc-white">
+                <h1 class="ff-damion">Matin</h1>
+                <p class="fs-h4 fw-normal">
+                    A free HTML template for both personal and commercial use, designed by JAC -
+                    Johnny A C. The name 'Matin' is inspired by its abundance of rounded borders.
+                </p>
+                <a href="#about" class="btn-bg2 border-round mt-20">
+                    Learn More <i class="bi bi-chevron-compact-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="hero-socials">
+            <a href="#" class="mt-a icon-link" aria-label="Follow us on facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on twitter">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on youtube">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+    </section>
+    <!-- MAIN HERO BANNER END -->
+{% endblock %}
+
+{% block content %}
+    <!-- ABOUT SECTION START -->
+    <section class="contained row" id="about">
+        <h2 class="section-title ff-damion">About us</h2>
+        <div class="col-balance">
+                <span class="fc-primary fs-h2">
+                    We are a top notch placholder text dedicated to make your vision comes to life! Ofcourse this
+                    comes with limitations.
+                </span>
+            <p>
+                Here at Roundazzle, our mission is crystal clear: to transform your dreams into reality.
+                We're not just good; we're extremely good, and we're dedicated to making your vision come to life.
+                Did we mention that we're in the business of turning your vision into reality?
+            </p>
+            <p>
+                Our vision is your vision and we are good at envisioning vision that you are envisioning and we'll make
+                that vision you are envisioning comes true and we are really good at it yeah believe this placeholder
+                text.
+            </p>
+            <p>
+                As a placeholder text in the 'About' section, my mission is to captivate your interest.
+                And what better way to captivate your interest than by entertaining you with visions, missions,
+                and a dash of whimsy? Or was it mission-vision, vision-mission, a vision that turned into a mission,
+                itching to become real?
+            </p>
+            <p>
+                Yes we are a top notch high quality, another top notch and high I wonder where we are
+                now, in space probably.
+            </p>
+            <a href="about.html" class="btn-bg1 mt-25 border-round">Find Out More</a>
+        </div>
+        <div class="col-balance">
+            <div class="sticky-img-dual">
+                <img src="../static/art/hero1.webp" alt="">
+                <img src="../static/svg/blob.svg" alt="" class="blob">
+                <img src="../static/art/hero2.webp" alt="">
+            </div>
+        </div>
+        <div class="sticky-img-dual-spacer"></div>
+    </section>
+    <!-- ABOUT SECTION END -->
+
+    <!-- TEAM SECTION START -->
+    <section class="contained">
+        <h2 class="section-title ff-damion">Our team</h2>
+        <p class="col-wide mlmr-a ta-center">
+            Our team composes of highly competitive cloned
+            individual with the same name too, they are top notch motivaded individual
+            dedicated to give hundred and ten percent effort to make your vision comes to life.
+        </p>
+        <div class="row flex-just-center">
+            {% for team in teams %}
+                <div class="col-tri">
+                    <article class="card-team">
+                        <img src="media/{{ team.image }}" alt="">
+                        <h3 class="title ff-damion">{{ team.full_name }}</h3>
+                        <div class="info">
+                            <h3 class="ff-damion">{{ team.job }}</h3>
+                            <p>{{ team.description }}</p>
+                        </div>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+        <br>
+    </section>
+    <!-- TEAM SECTION END -->
+
+    <!-- PREVIEW SERVICE SECTION START -->
+    <section class="bg-primary-foot ta-center">
+        <h2 class="section-title ff-damion bg-primary-foot">Service</h2>
+        <div class="contained">
+            <p class="col-wide mlmr-a">
+                Here's our range of exceptional services, designed to meet your needs with both quality
+                and affordability in mind. Don't hesitate to experience the difference today. Go ahead,
+                listen to this placeholder text.
+            </p>
+        </div>
+        <div class="contained row flex-just-center">
+            <div class="col-full">
+                <hr>
+            </div>
+            {% for service in services %}
+                <div class="col-tri">
+                    <i class="bi {{ service.icon_class }} fs-h2"></i>
+                    <h3 class="mt-10 ff-damion">{{ service.title }}</h3>
+                    <p>{{ service.summary }}</p>
+                </div>
+            {% endfor %}
+
+        </div>
+        <a href="{% url 'services' %}" class="btn-bg2 border-round mt-25">
+            View our services
+        </a>
+    </section>
+    <!-- PREVIEW SERVICE SECTION END -->
+
+    <!-- PREVIEW BLOGS SECTION START -->
+    <section class="contained">
+        <h2 class="section-title ff-damion">Blogs</h2>
+        <p class="ta-center col-wide mlmr-a">
+            Stay informed about our blogs, it's highly unlikely that they will stay up to date.
+            This will be the latest blog from 2023 when it's already 2026, feel free to read our
+            outdated blogs.
+        </p>
+        <div class="row flex-just-center">
+            {% for item in Articles %}
+                <div class="col-tri">
+                    <article class="card-blog">
+                        <img src="media/{{ item.image }}" alt="">
+                        <div class="info">
+                            <h3 class="mt-5 mb-5 ff-damion fc-primary">{{ item.title }}</h3>
+                            <p class="ml-a mt-5">{{ item.date|date:"m/d/Y" }}</p>
+                        </div>
+                        <p class="ml-10 mt-5 mb-20">{{ item.summary }}</p>
+                        <a href="blog/blog-1.html" class="ml-10"> {#  TODO: Ass link  #}
+                            Read blog <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+                    </article>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- PREVIEW BLOGS SECTION END -->
+
+    <section class="contained ta-center">
+        <h2 class="section-title ff-damion">Reach us</h2>
+        <p class="col-wide mlmr-a">
+            Some text that would compel the user to hit that contact button if what the user have seen above
+            is not enough, ofcourse you want as many potential clients as possible.
+        </p>
+        <a href="{% url 'contact' %}" class="btn-bg1 border-round mt-25">
+            Get in touch
+        </a>
+    </section>
+{% endblock %}

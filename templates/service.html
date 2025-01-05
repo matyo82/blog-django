@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}Service{% endblock %}
+{% block banner %}
+    <!-- SUB HERO BANNER START -->
+    <section class="sub-hero-banner" style="background-image: url('../static/art/hero3.webp');">
+        <div class="hero-contained">
+            <div class="hero-title fc-white">
+                <h1 class="ff-damion">Matin | Our Services</h1>
+                <a href="{% url 'home' %}" class="fc-white">
+                    Home
+                </a>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#" class="fc-white">
+                    Service
+                </a>
+            </div>
+        </div>
+        <div class="hero-socials">
+            <a href="#" class="mt-a icon-link" aria-label="Follow us on facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on twitter">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on youtube">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+    </section>
+    <!-- SUB HERO BANNER END -->
+{% endblock %}
+
+{% block content %}
+    <!-- SERVICES START -->
+    <section class="contained">
+        <h2 class="section-title ff-damion">Service</h2>
+        <div class="col-wide mlmr-a ta-center">
+                <span class="fc-primary fs-h2">
+                    Experience top notch, high quality, over the top, range of services.
+                </span>
+            <p>
+                We are now in space, our service is so high, and top we've reached the ever expanding universe.
+                Here's our range of exceptional services, designed to meet your needs with both quality
+                and affordability in mind. Don't hesitate to experience the difference today. Go ahead,
+                listen to this placeholder text.
+            </p>
+        </div>
+
+        <div class="row">
+            <div class="col-wide">
+                {% for object in object_list %}
+                    <!-- INDIVIDUAL SERVICES FEATURE START -->
+                    <img src="/media/{{ object.image }}" class="img-unheight" alt="" id="{{ object.slug }}">
+                    <span class="fs-h3 mt-25">{{ object.title }}</span>
+                    <p>{{ object.description }}</p>
+                    <!-- INDIVIDUAL SERVICES FEATURE END -->
+                {% endfor %}
+
+
+            </div>
+
+            <!-- SERVICES SIDE BAR SHORTCUT LINKS START -->
+            <div class="col-slim order-tab-1">
+                <div class="card-side card-side-navigation">
+                    <h3 class="no-margin ff-damion">Services</h3>
+                    <hr>
+                    {% for object in object_list %}
+                    <a href="#{{ object.slug }}">{{ object.title }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- SERVICES SIDE BAR SHORTCUT LINKS END -->
+
+        </div>
+    </section>
+    <!-- SERVICES END -->
+{% endblock %}
+

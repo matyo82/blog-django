@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}Blog list{% endblock %}
+{% block banner %}
+    <!-- SUB HERO BANNER START -->
+    <section class="sub-hero-banner" style="background-image: url('../../static/art/overlay.webp');">
+        <div class="hero-contained">
+            <div class="hero-title fc-white">
+                <h1 class="ff-damion">Matin | Blogs</h1>
+                <a href="{% url 'home' %}" class="fc-white">
+                    Home
+                </a>
+                <i class="bi bi-chevron-right"></i>
+                <a href="#" class="fc-white">
+                    Blogs
+                </a>
+            </div>
+        </div>
+        <div class="hero-socials">
+            <a href="#" class="mt-a icon-link" aria-label="Follow us on facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on twitter">
+                <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="icon-link mt-10" aria-label="Follow us on youtube">
+                <i class="bi bi-youtube"></i>
+            </a>
+        </div>
+    </section>
+    <!-- SUB HERO BANNER END -->
+{% endblock %}
+
+{% block content %}
+    <!-- BLOGS ENTRY START -->
+    <section class="contained">
+        <h2 class="section-title ff-damion">Blogs</h2>
+        <p class="ta-center col-wide mlmr-a">
+            Stay informed about our blogs, it's highly unlikely that they will stay up to date.
+            This will be the latest blog from 2023 when it's already 2026, feel free to read our
+            outdated blogs.
+        </p>
+        <div class="row flex-just-center">
+            {% for item in article_list %}
+            	<div class="col-tri">
+                <article class="card-blog">
+                    <img src="/media/{{ item.image }}" alt="">
+                    <div class="info">
+                        <h3 class="mt-5 mb-5 ff-damion fc-primary">{{ item.title }}</h3>
+                        <p class="ml-a mt-5">{{ item.date|date:"m/d/Y" }}</p>
+                    </div>
+                    <p class="ml-10 mt-5 mb-20">{{ item.summary }}</p>
+                    <a href="{% url 'blog_detail' item.pk item.slug %}" class="ml-10">
+                        Read blog <i class="bi bi-box-arrow-up-right"></i>
+                    </a>
+                </article>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- BLOGS ENTRY END -->
+{% endblock %}
+
+
