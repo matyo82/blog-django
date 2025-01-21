@@ -148,7 +148,7 @@
                             <p class="ml-a mt-5">{{ item.date|date:"m/d/Y" }}</p>
                         </div>
                         <p class="ml-10 mt-5 mb-20">{{ item.summary }}</p>
-                        <a href="blog/blog-1.html" class="ml-10"> {#  TODO: Ass link  #}
+                        <a href="{% url 'blog_detail' item.pk item.slug %}" class="ml-10"> {#  TODO: Ass link  #}
                             Read blog <i class="bi bi-box-arrow-up-right"></i>
                         </a>
                     </article>
